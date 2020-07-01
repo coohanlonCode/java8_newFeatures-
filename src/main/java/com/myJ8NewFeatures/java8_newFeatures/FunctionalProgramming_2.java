@@ -9,18 +9,27 @@ public class FunctionalProgramming_2 {
         final int numberOne = 30;
         final int numberTwo = 10;
 
+        // Single-line, implied 'return'
         MyMathInterface additionLambda = (a, b) -> a + b;
         System.out.println(buildOutputString(numberOne, "adds", numberTwo, additionLambda));
 
-        MyMathInterface subtractionLambda = (a, b) -> a - b;
+
+        // Single-line, mandatory braces with mandatory 'return'
+        MyMathInterface subtractionLambda = (a, b) -> { return a - b;};
         System.out.println(buildOutputString(numberOne, "subtracts", numberTwo, subtractionLambda));
 
-        MyMathInterface multiplicationLambda = (a, b) -> a * b;
+
+        // Multi-line, mandatory braces with mandatory 'return'
+        MyMathInterface multiplicationLambda = (a, b) -> {
+            int subtractedTotal = a * b;
+            return subtractedTotal;
+        };
         System.out.println(buildOutputString(numberOne, "multiplies by", numberTwo, multiplicationLambda));
 
+
+        // Single-line, implied 'return'
         MyMathInterface divisionLambda = (a, b) -> a / b;
         System.out.println(buildOutputString(numberOne, "divides by", numberTwo, divisionLambda));
-
     }
 
     private static String buildOutputString(int number1,
@@ -34,6 +43,7 @@ public class FunctionalProgramming_2 {
     }
 }
 
+@FunctionalInterface
 interface MyMathInterface { // NEED to have a functional interface if you're going to use lambda.
     public int doThatMathThing(int a, int b);
 }
