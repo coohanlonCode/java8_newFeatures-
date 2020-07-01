@@ -65,6 +65,8 @@ FUNCTIONAL INTERFACES
 
     - Functional interfaces ONLY have one abstract method/signature.
 
+    - To create a Lambda expression, you REQUIRE an interface with ONE ABSTRACT METHOD
+
     - Functional interface are ALLOWED to have:
         - DEFAULT interface methods
         - STATIC interface
