@@ -4,8 +4,8 @@ public class FunctionalProgramming {
 
     public static void main(String[] args) {
 
-        int numberOne = 19;
-        int numberTwo = 90;
+        final int numberOne = 19;
+        final int numberTwo = 90;
 
         // Object-Oriented approach calls the defined method, it executes, it returns content, then
         // that content is output.
@@ -13,8 +13,8 @@ public class FunctionalProgramming {
         System.out.println(oopExecutedOutput);
 
 
-        // FUNCTIONAL PROGRAMMING creates an anonymous function by declaring and assigning a lambda.
-        // The anonymous function is defined here an assigned to a variable.
+
+        // CREATE LAMBDA, ASSIGN TO VARIBLE, PASS THAT VARIABLE
         FunctionalSumInterface lambdaWithRegularAddition = (a, b) -> {
             int sum = a + b;
             return "[from 'lambdaWithRegularAddition' var] I'm calculated in the lambda! Sum is " + sum;
@@ -41,7 +41,9 @@ public class FunctionalProgramming {
     }
 
     public static String sumStringFromFunctionalProgramming(
-            FunctionalSumInterface lambdaExpression, int firstNum, int secondNum) {
+            FunctionalSumInterface lambdaExpression,  // Method signature has functional interface as PARAM TYPE
+            int firstNum,
+            int secondNum) {
 
         return "This first line text from 'sumStringFromFunctionalProgramming(lambda,int, int)' method. \n" +
 
@@ -68,4 +70,7 @@ FUNCTIONAL PROGRAMMING IN JAVA
     - Functional programming is good for simple things that are so easy to do that having their own method
       would be unnecessary complications.
         - Save time and effort in TDD styled coding.
+
+    - CREATE LAMBDA, ASSIGN LAMDA TO VARIBLE, and PASS THAT VARIABLE to a method that has that functional interface
+        as a parameter type.
  */
