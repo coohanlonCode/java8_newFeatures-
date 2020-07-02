@@ -538,11 +538,46 @@
 				- Ex:
 				Function <int, double> usdToRupee = usdAmt -> usdAmt * exchangeRate;
 				double rupeeValForTenUsd = myVarName.apply(10);
-		
-		
-		
-		
-		
+
+
+
+		#8 PREDEFINED FUNCTIONAL INTERFACE ANDTHEN_COMPOSE
+
+			- andThen and compose are basically the same thing but their execution order is opposite.
+				- andThen and compose are default methods
+
+			- WHAT: used to chain predefined functions together sequentially
+
+			- WHY: easy way to adjust which equation runs first
+
+			- andThen
+				- It is a way of smashing multiple Functions together and running the first function then second function
+
+				- Syntax:   function1.andThen(function2).apply(input);
+
+				- Executes the left-most function first then uses its result as the input to the other function.
+
+				- Ex:
+						function1.andThen(method2).apply("Ohio")
+
+					String xyz = function1.apply("Ohio")
+					String finalText = method2.apply(xyz);
+
+			- compose
+				- It is a way of smashing multiple Functions together and running the SECOND function then FIRST function
+
+				- Syntax:   function1.compose(function2).apply(input);
+
+				- Executes the RIGHT-most function first then uses its result as the input to the other function.
+					- (Opposite order than what andThen uses)
+
+						function1.compose(method2).apply(input);
+
+					- 1st. abc = method2.apply(input);
+					- 2nd. xyz = function1.apply(abc)
+					- 3rd. result is xyz
+
+
 		
 		
 		
