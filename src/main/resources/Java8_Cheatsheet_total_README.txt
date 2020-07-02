@@ -480,15 +480,64 @@
 					- .equals(), .hashCode(), etc..
 					- Everything in Java in an object so its okay bc these methods already exist.
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+		#5 FUNCTIONAL PROGRAMMING IN JAVA
+
+			- In Java, a method can be passed to another method by using a Lambda
+				- Ex: addTwoNumbers( (a,b) -> a +b );
+
+			- Passing a function to a method is called FUNCTIONAL PROGRAMMING
+
+			- Passing an object in a method is OBJECT ORIENTED PROGRAMMING
+
+			- Functional programming is good for simple things that are so easy to do that having their own method
+			  would be unnecessary complications.
+				- Save time and effort in TDD styled coding.
+
+			- CREATE LAMBDA, ASSIGN LAMDA TO VARIBLE, and PASS THAT VARIABLE to a method that has that functional interface
+				as a parameter type.
+
+
+		#6 DOUBLE COLON
+
+			- Double colon ('::') is the METHOD REFERENCE
+
+			- Method reference can only be used with a functional interface
+
+			- Used to allow one method to reference another method that has an identical parameter list.
+
+			- Can refer to static and non-static methods
+
+			- Acts as a lambda reference. Double colon can be viewed as an alternative syntaxt to lambda expression.
+				Ex: the below two are equivalent
+					MethodReference myRef = StaticMethodRefDemo::helloMethodReference
+					MethodReference myRef = () -> StaticMethodRefDemo.helloMethodReference()
+
+			- Double colon allows you to assign any method with identical parameters to a functional interface declaration.
+
+			- Methods that refer to each other need:
+				- Must assign to a functional interface
+				- To have the exact same parameter declarations.
+
+			- Methods that refer to each other DO NOT need:
+				- To have the same method name.
+				- To have the same return type
+
+
+
+		#7 PREDEFINED FUNCTIONAL INTERFACE INTRO
+
+			- WHAT: A "predefined functional interface"version of a functional interface that takes a single input parameter and returns a single output
+
+			- WHY: Less methods. Saves code so you don't need to create a new method. Like other lambdas and functional interfaces, its less code you have to write so its easier to manage and has TDD time-saving implications.
+
+			- SYNTAX:   Function <inputType, outputType> myVarName = exclusivelySoloParam -> /*logic*/
+					-  Generics here must be objects or primitive's Wrapper class (int => Integer)
+
+			- The predefined function is accessed by using the '.apply(exclusivelySoloParam)' on the reference
+				- Ex:
+				Function <int, double> usdToRupee = usdAmt -> usdAmt * exchangeRate;
+				double rupeeValForTenUsd = myVarName.apply(10);
 		
 		
 		
