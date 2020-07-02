@@ -578,6 +578,11 @@
 					- 3rd. result is xyz
 
 
-		
-		
+		#9 PREDEFINED FUNCTIONAL INTERFACE IDENTITY FUNCTION
+
+			- WHAT: Static method that returns exactly what was passed in
+
+			- WHY: When you need to return an EXACT instance of an object in a scenario where having a functionally equilvalent object is a no-go
+
+			- Syntax:   Function<TypeA, TypeA> myVarName = Function.identity(inputOfTypeA)
 		
