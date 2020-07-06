@@ -1,8 +1,8 @@
-package com.myJ8NewFeatures.java8_newFeatures;
+package com.myJ8NewFeatures.java8_newFeatures.predefinedFunctionalInterfaces;
 
 import java.util.function.Predicate;
 
-public class PredefinedFunctionalInterface_predicate {
+public class PredicateFunction {
 
     public static void main(String[] args) {
 

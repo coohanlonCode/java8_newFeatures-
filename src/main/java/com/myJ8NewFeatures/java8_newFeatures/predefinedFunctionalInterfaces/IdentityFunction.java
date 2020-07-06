@@ -1,8 +1,8 @@
-package com.myJ8NewFeatures.java8_newFeatures;
+package com.myJ8NewFeatures.java8_newFeatures.predefinedFunctionalInterfaces;
 
 import java.util.function.Function;
 
-public class PredefinedFunctionalInterface_identity {
+public class IdentityFunction {
 
     public static void main(String[] args) {
 

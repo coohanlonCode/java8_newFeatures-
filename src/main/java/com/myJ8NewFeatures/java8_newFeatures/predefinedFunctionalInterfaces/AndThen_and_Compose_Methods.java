@@ -1,8 +1,8 @@
-package com.myJ8NewFeatures.java8_newFeatures;
+package com.myJ8NewFeatures.java8_newFeatures.predefinedFunctionalInterfaces;
 
 import java.util.function.Function;
 
-public class PredefinedFunctionalInterface_andThen_compose {
+public class AndThen_and_Compose_Methods {
 
     public static void main(String[] args) {
 
@@ -76,7 +76,7 @@ public class PredefinedFunctionalInterface_andThen_compose {
 }
 
 /*
-#8 PREDEFINED FUNCTIONAL INTERFACE ANDTHEN_COMPOSE
+#8 PREDEFINED FUNCTIONAL INTERFACE ANDTHEN and COMPOSE
 
     - andThen and compose are basically the same thing but their execution order is opposite.
         - andThen and compose are default methods

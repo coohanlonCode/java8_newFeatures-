@@ -1,8 +1,8 @@
-package com.myJ8NewFeatures.java8_newFeatures;
+package com.myJ8NewFeatures.java8_newFeatures.predefinedFunctionalInterfaces;
 
 import java.util.function.*;
 
-public class PredefinedFunctionalInterface_supplier {
+public class SupplierFunction {
 
     public static void main(String[] args) {
 
