@@ -51,7 +51,12 @@ class LectureInfo{
 
     - WHAT: Takes no input and returns an ouput of a defined type.
 
-    - WHY: saves space. I don't have a clear reason why to use this right now.
+    - WHY: 1. Saves space.
+           2. You would want to use the method to replace all uses of the variable, bc if you use that
+            variables a lot in that method and you need to change it, it can be safer to just change the declaration.
+            - Ex: you have a method that uses the same variable like 6 times. Rather than having to adjust that ref
+                6 times, you can use the Supplier. It would be safer than the potential accidentally of having that
+                varible's state altered in some pass-by-reference.
 
     - SYNTAX:
         Supplier<T> mySupplier = () -> do somehting and return;

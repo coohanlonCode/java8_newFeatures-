@@ -541,7 +541,7 @@
 
 
 
-		#8 PREDEFINED FUNCTIONAL INTERFACE ANDTHEN_COMPOSE
+		#8 PREDEFINED FUNCTIONAL INTERFACES - ANDTHEN and COMPOSE
 
 			- andThen and compose are basically the same thing but their execution order is opposite.
 				- andThen and compose are default methods
@@ -578,11 +578,88 @@
 					- 3rd. result is xyz
 
 
-		#9 PREDEFINED FUNCTIONAL INTERFACE IDENTITY FUNCTION
+		#9 PREDEFINED FUNCTIONAL INTERFACES - IDENTITY FUNCTION
 
 			- WHAT: Static method that returns exactly what was passed in
 
 			- WHY: When you need to return an EXACT instance of an object in a scenario where having a functionally equilvalent object is a no-go
 
 			- Syntax:   Function<TypeA, TypeA> myVarName = Function.identity(inputOfTypeA)
-		
+
+
+
+
+		#10 PREDEFINED FUNCTIONAL INTERFACES - PREDICATE FUNCTION
+
+			- WHAT: Function interface method that accepts some type and implicitly returns a boolean
+
+			- WHY: Used to shorthand yes/no decisions so you have a reusable utility that doesnt need to be its own method.
+
+			- SYNTAX:
+				Predicate<inputType> myVarName =  input ->  logic ;
+				boolean decisonResult = myVarName.test(singleInput);
+
+
+
+		#11 PREDEFINED FUNCTIONAL INTERFACES - SUPPLIER FUNCTION
+
+			- WHAT: Takes no input and returns an ouput of a defined type.
+
+			 - WHY: 1. Saves space.
+				   2. You would want to use the method to replace all uses of the variable, bc if you use that
+					variables a lot in that method and you need to change it, it can be safer to just change the declaration.
+					- Ex: you have a method that uses the same variable like 6 times. Rather than having to adjust that ref
+						6 times, you can use the Supplier. It would be safer than the potential accidentally of having that
+						varible's state altered in some pass-by-reference.
+
+			- SYNTAX:
+				Supplier<T> mySupplier = () -> do somehting and return;
+				T retrievedValue = mySupplier.get();
+
+			- There are further subclasses as well
+				- IntSupplier having one abstract method getAsInt()
+				- LongSupplier having one abstract method getAsLong()
+				- DoubleSupplier having one abstract method getAsDouble()
+				- BooleanSupplier having one abstract method getAsBoolean()
+
+		#12 XXXXXXXXXXXX
+
+			- WHAT:
+
+			- WHY:
+
+			- SYNTAX:
+
+		#13 XXXXXXXXXXXX
+
+			- WHAT:
+
+			- WHY:
+
+			- SYNTAX:
+
+		#14 XXXXXXXXXXXX
+
+			- WHAT:
+
+			- WHY:
+
+			- SYNTAX:
+
+		#15 XXXXXXXXXXXX
+
+			- WHAT:
+
+			- WHY:
+
+			- SYNTAX:
+
+
+		#666666 XXXXXXXXXXXX
+
+		- WHAT:
+
+		- WHY:
+
+		- SYNTAX:
+
