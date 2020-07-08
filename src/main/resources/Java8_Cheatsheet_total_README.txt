@@ -622,13 +622,17 @@
 				- DoubleSupplier having one abstract method getAsDouble()
 				- BooleanSupplier having one abstract method getAsBoolean()
 
-		#12 XXXXXXXXXXXX
+		#12 PREDEFINED FUNCTIONAL INTERFACES - Consumer FUNCTION
 
-			- WHAT:
+			- WHAT: takes a single input and return nothing/void. This is equivalent of a functional void method.
 
 			- WHY:
+				1. Save code
+				2. Used to do utility tasks, such as logging, that do not return anything.
+				3. To modify object by pass by reference
 
-			- SYNTAX:
+			- SYNTAX: Consumer<inputObjectType> myRefVar = inputParam -> logic
+					  myRefVar.accept(inputObject);
 
 		#13 XXXXXXXXXXXX
 
