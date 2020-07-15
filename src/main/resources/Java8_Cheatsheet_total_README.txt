@@ -634,21 +634,35 @@
 			- SYNTAX: Consumer<inputObjectType> myRefVar = inputParam -> logic
 					  myRefVar.accept(inputObject);
 
-		#13 XXXXXXXXXXXX
+		#13 PREDEFINED FUNCTIONAL INTERFACES - FOREACH FUNCTION
 
-			- WHAT:
-
-			- WHY:
-
-			- SYNTAX:
-
-		#14 XXXXXXXXXXXX
-
-			- WHAT:
+			- WHAT: function to shorthand to iterate each item in a collection (something that implements Collection<E>). This is intended to be a alternative to the enhanced for-each loop
 
 			- WHY:
+				1. Less code to write.
+
+			- SYNTAX:  List<type> myList = new ArrayList<>();  //List implements Collection<>
+
+						myList.forEach( function logic to do to each thing)
+
+
+		#14 STREAMS - Intro
+
+			- WHAT: A way to take sequential parts of a collections and process them without the need for a 'for' loop
+
+			- WHY: Clean way to integrate functions into collections. Also to cut down on resources needed for a reserved 'for' loop.
 
 			- SYNTAX:
+					Collection<TypeInCollelction> myNewCollections = myOriginalCollection.stream().
+						.myIntermediateOperation(myPredicateFunction)
+						.terminalOperation(Collectors.staticMethodToDesiredCollection);
+
+			- Made of 3 parts
+				- 1 Source: creates a copy of the initial collection as a stream
+				- 1..N Intermediate Operator: modifies the stream via a variety of operations, all return a stream that has a state that reflects the modifications
+				- 1 Terminal Operator: converts stream to collection structure
+
+			- Streams DO NOT Change the original data structure. They are used to create new data structures that are modified
 
 		#15 XXXXXXXXXXXX
 

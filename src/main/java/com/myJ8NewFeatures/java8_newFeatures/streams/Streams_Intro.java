@@ -28,7 +28,10 @@ public class Streams_Intro {
 
         shortFormatForOddNumberedVersions(myListOfVersions);
 
+        evenNumbersSquared(myListOfVersions);
+
     }
+
 
     public static void longFormatForEvenNumberedVersions(List<Integer> myIntList) {
 
@@ -55,8 +58,39 @@ public class Streams_Intro {
 
         System.out.println("(Short-form) Odd numbers in list: " + myOddNumbers);
     }
+
+    private static void evenNumbersSquared(List<Integer> myIntList) {
+
+        System.out.println("\n(evenSquaredNumbers) Initial Input: "+ myIntList);
+
+        System.out.println("Using streams to get evens and square them");
+        myIntList.stream()
+            .filter(number -> number % 2 == 0)                                       // return items that eval to true
+                .map(evenNumber -> evenNumber * evenNumber)                          // apply to every item in stream
+                .forEach(evenSquaredNumber -> System.out.println(evenSquaredNumber));// terminal op to output each
+    }
 }
 
+/*
+#14 STREAMS - Intro
 
+    - WHAT: A way to take sequential parts of a collections and process them without the need for a 'for' loop
+
+    - WHY: Clean way to integrate functions into collections.
+        - Also to cut down on resources needed for a reserved 'for' loop.
+
+    - SYNTAX:
+            Collection<TypeInCollelction> myNewCollections = myOriginalCollection.stream().
+                .myIntermediateOperation(myPredicateFunction)
+                .terminalOperation(Collectors.staticMethodToDesiredCollection);
+
+    - Made of 3 parts
+        - 1 Source: creates a copy of the initial collection as a stream
+        - 1..N Intermediate Operator: modifies the stream via a variety of operations, all return a stream
+                that has a state that reflects the modifications
+        - 1 Terminal Operator: converts stream to collection structure
+
+    - Streams DO NOT Change the original data structure. They are used to create new data structures that are modified
+ */
 
 
