@@ -1,6 +1,6 @@
 package com.myJ8NewFeatures.java8_newFeatures.streams;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -8,20 +8,9 @@ import java.util.stream.Stream;
 
 public class Streams_Intro {
 
-
     public static void main(String[] args) {
 
-
-        List<Integer> myListOfVersions = new ArrayList<>();
-
-        myListOfVersions.add(1);
-        myListOfVersions.add(2);
-        myListOfVersions.add(3);
-        myListOfVersions.add(4);
-        myListOfVersions.add(5);
-        myListOfVersions.add(6);
-        myListOfVersions.add(7);
-
+        List<Integer> myListOfVersions = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
         System.out.println("Default in list: " + myListOfVersions);
 
         longFormatForEvenNumberedVersions(myListOfVersions);
@@ -29,15 +18,13 @@ public class Streams_Intro {
         shortFormatForOddNumberedVersions(myListOfVersions);
 
         evenNumbersSquared(myListOfVersions);
-
     }
-
 
     public static void longFormatForEvenNumberedVersions(List<Integer> myIntList) {
 
         Stream<Integer> streamFromIntegerList = myIntList.stream();
 
-        // This predicate's generic MUST match the stream's generic, if they are to be directly used.
+        // This predicate's generic MUST match the stream's generic, if they are to be directly used together.
         Predicate<Integer> trueIfEvenPredicate = number -> number % 2 == 0;
 
         // Creates new stream populated of only the elements when this Predicate evaluates to true
@@ -47,7 +34,6 @@ public class Streams_Intro {
         List<Integer> myEvenList = subsetStreamOfEvenIntegers.collect(Collectors.toList());
 
         System.out.println("\n(Long-form) Even numbers in list: " + myEvenList);
-
     }
 
     public static void shortFormatForOddNumberedVersions(List<Integer> myIntList) {
@@ -61,11 +47,11 @@ public class Streams_Intro {
 
     private static void evenNumbersSquared(List<Integer> myIntList) {
 
-        System.out.println("\n(evenSquaredNumbers) Initial Input: "+ myIntList);
+        System.out.println("\n(evenSquaredNumbers) Initial Input: " + myIntList);
 
         System.out.println("Using streams to get evens and square them");
         myIntList.stream()
-            .filter(number -> number % 2 == 0)                                       // return items that eval to true
+                .filter(number -> number % 2 == 0)                                       // return items that eval to true
                 .map(evenNumber -> evenNumber * evenNumber)                          // apply to every item in stream
                 .forEach(evenSquaredNumber -> System.out.println(evenSquaredNumber));// terminal op to output each
     }
@@ -92,5 +78,3 @@ public class Streams_Intro {
 
     - Streams DO NOT Change the original data structure. They are used to create new data structures that are modified
  */
-
-
