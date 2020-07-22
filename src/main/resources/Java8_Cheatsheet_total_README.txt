@@ -2758,12 +2758,21 @@
 
 		#18 STREAMS - MAP
 
-			- WHAT:
+			- WHAT: Applies the given function to every item in the stream and then a
 
-			- WHY:
+			- WHY: Process everything in a collection and make a copy of the collection stream with those changes, without directly modifying the original collection
 
-			- SYNTAX:
+			- SYNTAX:	myList.stream.map(functionToDoThingToEachElement)
 
+			- stream.map(..) is similar to collection.forEach(..)
+
+				- They both process everything in the provided collection/strea,
+
+				- stream.map(..) applies the changes to a new stream that can be collected. The original collection streamed is NOT modified.
+					- no side effects to original objects bc you are creating a new stream.
+
+				- collection.forEach(..) applies the changes directly to the collection and YES THE OBJECTS in the colletion direclty have their state changed.
+					- this can cause side effects, such as if applied to entity object using Spring Data JPA then db update processes would occur.
 
 		#19 STREAMS - FLATMAP
 
