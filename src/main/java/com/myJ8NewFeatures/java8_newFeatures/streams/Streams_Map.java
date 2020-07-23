@@ -33,7 +33,7 @@ public class Streams_Map {
 /*
 STREAMS - MAP
 
-			- WHAT: Applies the given function to every item in the stream and then a
+			- WHAT: Applies the given function to every item in the stream
 
 			- WHY: Process everything in a collection and make a copy of the collection stream with those changes,
 			    without directly modifying the original collection
