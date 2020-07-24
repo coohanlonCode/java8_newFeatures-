@@ -2758,7 +2758,7 @@
 
 		#18 STREAMS - MAP
 
-			- WHAT: Applies the given function to every item in the stream and then a
+			- WHAT: Applies the given function to every item in the stream
 
 			- WHY: Process everything in a collection and make a copy of the collection stream with those changes, without directly modifying the original collection
 
@@ -2776,11 +2776,22 @@
 
 		#19 STREAMS - FLATMAP
 
-			- WHAT:
+			- WHAT: Process everything in a collection, including collections of streams.
 
-			- WHY:
+			- WHY: Used to consolidate (or 'flatten') multiple streams into a single stream. Convert collections of collections into a single collection.
+
+				List<List<String>>  into   List<String>
 
 			- SYNTAX:
+				List<List<String>> listContainingList
+				listContainingList
+					.stream()
+					.flatMap( myListRecord -> myListRecord.stream())
+
+				List<List<String>> listContainingList
+				listContainingList
+					.stream()
+					.flatMap( Collection::stream)
 
 		#20 STREAMS - PEEK
 
